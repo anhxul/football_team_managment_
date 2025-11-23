@@ -1,0 +1,148 @@
+/* --- Reset and base styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: #f4f6fc;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 250px;
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+  background: #1abc9c;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logout {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #34495e;
+}
+
+.logout a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Main Content --- */
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background: #fff;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.top-bar h1 {
+  font-size: 22px;
+  color: #333;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* --- Cards Section --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
